@@ -1,4 +1,4 @@
-import { createRubric } from '@/app/(production)/rubrics/server'
+import { createRubric } from '@/app/(app)/(production)/rubrics/server'
 
 export default function index({ data }) {
     return (

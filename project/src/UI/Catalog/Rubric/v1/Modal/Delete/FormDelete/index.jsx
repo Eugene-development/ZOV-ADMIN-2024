@@ -1,4 +1,4 @@
-import { deleteRubric } from '@/app/(production)/rubrics/server'
+import { deleteRubric } from '@/app/(app)/(production)/rubrics/server'
 
 export default id => {
     return (

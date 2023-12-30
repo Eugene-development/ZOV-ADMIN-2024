@@ -1,4 +1,4 @@
-import { updateCategory } from '@/app/(production)/categories/server'
+import { updateCategory } from '@/app/(app)/(production)/categories/server'
 
 export default function index({ data }) {
     return (

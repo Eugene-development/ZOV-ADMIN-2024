@@ -1,4 +1,4 @@
-import { deleteCategory } from '@/app/(production)/categories/server'
+import { deleteCategory } from '@/app/(app)/(production)/categories/server'
 
 export default id => {
     return (

@@ -1,4 +1,4 @@
-import { createProduct } from '@/app/(production)/products/server'
+import { createProduct } from '@/app/(app)/(production)/products/server'
 
 export default function index({ data }) {
     return (

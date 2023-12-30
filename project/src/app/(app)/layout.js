@@ -3,6 +3,7 @@
 import { useAuth } from '@/hooks/auth'
 import Navigation from '@/app/(app)/Navigation'
 import Loading from '@/app/(app)/Loading'
+import { Header, Bar } from '@/UI'
 
 const AppLayout = ({ children, header }) => {
     const { user } = useAuth({ middleware: 'auth' })
@@ -21,7 +22,11 @@ const AppLayout = ({ children, header }) => {
                 </div>
             </header>
 
-            <main>{children}</main>
+            <main>
+                <Header />
+                <Bar />
+                {children}
+            </main>
         </div>
     )
 }

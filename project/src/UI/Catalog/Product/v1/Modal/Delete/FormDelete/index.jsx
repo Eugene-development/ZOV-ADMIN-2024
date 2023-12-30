@@ -1,4 +1,4 @@
-import { deleteProduct } from '@/app/(production)/products/server'
+import { deleteProduct } from '@/app/(app)/(production)/products/server'
 
 export default id => {
     return (

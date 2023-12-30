@@ -1,4 +1,4 @@
-import { updateProduct } from '@/app/(production)/products/server'
+import { updateProduct } from '@/app/(app)/(production)/products/server'
 
 export default function index({ data }) {
     return (

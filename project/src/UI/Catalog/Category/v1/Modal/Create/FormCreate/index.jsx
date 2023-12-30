@@ -1,4 +1,4 @@
-import { createCategory } from '@/app/(production)/categories/server'
+import { createCategory } from '@/app/(app)/(production)/categories/server'
 
 export default function index({ data }) {
     return (

@@ -1,7 +1,6 @@
 import { Fragment, useRef, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { CheckIcon } from '@heroicons/react/24/outline'
-import { map } from 'lodash'
 import { useSlug } from '@/hooks/slug'
 
 import FormCreate from './FormCreate'

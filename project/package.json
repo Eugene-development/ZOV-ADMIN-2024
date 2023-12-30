@@ -10,7 +10,6 @@
     "lint:fix": "next lint --fix"
   },
   "dependencies": {
-    "@headlessui/react": "^1.4.2",
     "axios": "^1.6.3",
     "next": "^14.0.3",
     "react": "^18.2.0",
@@ -19,7 +18,10 @@
     "uuid": "^9.0.1",
     "zustand": "^4.4.7",
     "graphql": "^16.8.1",
-    "graphql-request": "^6.1.0"
+    "graphql-request": "^6.1.0",
+    "@headlessui/react": "^1.7.13",
+    "@heroicons/react": "^2.0.16"
+
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.12.1",
