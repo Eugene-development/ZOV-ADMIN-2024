@@ -37,8 +37,8 @@ const Home = () => {
                                     <div className="ml-4 text-lg leading-7 font-semibold">
                                         <a
                                             href="https://laravel.com/docs"
-                                            className="underline text-gray-900 dark:text-white">
-                                            Documentation
+                                            className="text-gray-900 dark:text-white">
+                                            Контент
                                         </a>
                                     </div>
                                 </div>
@@ -73,8 +73,8 @@ const Home = () => {
                                     <div className="ml-4 text-lg leading-7 font-semibold">
                                         <a
                                             href="https://laracasts.com"
-                                            className="underline text-gray-900 dark:text-white">
-                                            Laracasts
+                                            className="text-gray-900 dark:text-white">
+                                            Аналитика
                                         </a>
                                     </div>
                                 </div>
@@ -106,8 +106,8 @@ const Home = () => {
                                     <div className="ml-4 text-lg leading-7 font-semibold">
                                         <a
                                             href="https://laravel-news.com/"
-                                            className="underline text-gray-900 dark:text-white">
-                                            Laravel News
+                                            className="text-gray-900 dark:text-white">
+                                            Документация
                                         </a>
                                     </div>
                                 </div>
@@ -137,7 +137,7 @@ const Home = () => {
                                     </svg>
 
                                     <div className="ml-4 text-lg leading-7 font-semibold text-gray-900 dark:text-white">
-                                        Vibrant Ecosystem
+                                        Продвижение
                                     </div>
                                 </div>
 
