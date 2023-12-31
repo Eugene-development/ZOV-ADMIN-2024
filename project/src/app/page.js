@@ -228,9 +228,9 @@ const Home = () => {
                                 </svg>
 
                                 <a
-                                    href="https://laravel.bigcartel.com"
+                                    href="https://zov.top"
                                     className="ml-1 underline">
-                                    Shop
+                                    Сайт
                                 </a>
 
                                 <svg
@@ -245,15 +245,15 @@ const Home = () => {
                                 </svg>
 
                                 <a
-                                    href="https://github.com/sponsors/taylorotwell"
+                                    href="https://doc.zov.top"
                                     className="ml-1 underline">
-                                    Sponsor
+                                    Документация
                                 </a>
                             </div>
                         </div>
 
                         <div className="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
-                            Laravel Breeze + Next.js template
+                            Версия - 311223
                         </div>
                     </div>
                 </div>
