@@ -226,6 +226,19 @@ export default () => {
                                             </div>
                                         </div>
 
+                                                <div>
+                                                    <button
+                                                        type="button"
+                                                        className="mt-3 px-24 inline-flex w-full justify-center rounded-md border border-gray-300 bg-white py-2 text-base font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 sm:col-start-1 sm:mt-0 sm:text-sm"
+                                                        // onClick={() =>
+                                                        //     closeVisibleCreateProductModal()
+                                                        // }
+                                                    >
+                                                        Добавить изображения
+                                                    </button>
+                                                </div>
+
+
                                         <div className="">
                                             <div className="mt-8 flex justify-between">
                                                 <div

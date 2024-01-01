@@ -86,7 +86,7 @@ const Page = () => {
 
             {/* Confirm Password */}
             <div className="mt-4">
-                <Label htmlFor="passwordConfirmation">Повторить пароль</Label>
+                <Label htmlFor="passwordConfirmation">Повторите пароль</Label>
 
                 <Input
                     id="passwordConfirmation"

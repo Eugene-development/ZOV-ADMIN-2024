@@ -22,6 +22,16 @@ const visibleCreateProductModal = create(set => ({
         set(() => ({ currentVisibleCreateProductModal: false })),
 }))
 
+const visibleCreateImageProductModal = create(set => ({
+    currentVisibleCreateImageProductModal: false,
+    currentProduct: null,
+    openVisibleCreateImageProductModal: () => {
+        set(() => ({ currentVisibleCreateImageProductModal: true }))
+    },
+    closeVisibleCreateImageProductModal: () =>
+        set(() => ({ currentVisibleCreateImageProductModal: false })),
+}))
+
 const visibleUpdateProductModal = create(set => ({
     currentVisibleUpdateProductModal: false,
     currentUpdateProduct: [],
@@ -49,6 +59,7 @@ const visibleDeleteProductModal = create(set => ({
 export const useProductStore = {
     visibleReadProductModal,
     visibleCreateProductModal,
+    visibleCreateImageProductModal,
     visibleUpdateProductModal,
     visibleDeleteProductModal,
 }
