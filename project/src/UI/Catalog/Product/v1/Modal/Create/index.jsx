@@ -6,7 +6,7 @@ import { useSlug } from '@/hooks/slug'
 import FormCreate from './FormCreate'
 
 import { useProductStore } from '@/store/product'
-const { visibleCreateProductModal } = useProductStore
+const { visibleCreateProductModal, visibleCreateImageProductModal } = useProductStore
 
 export default () => {
     const {
@@ -14,6 +14,8 @@ export default () => {
         closeVisibleCreateProductModal,
         allCategory,
     } = visibleCreateProductModal()
+
+    const { openVisibleCreateImageProductModal } = visibleCreateImageProductModal()
 
     // const rubric = map(data?.rubric, v => v.id)
     const [selectedParent, setSelectedParent] = useState([])
@@ -45,7 +47,7 @@ export default () => {
                     as="div"
                     className="relative z-10"
                     initialFocus={cancelButtonRef}
-                    onClose={() => closeVisibleCreateProductModal()}
+                    onClose={() => null}
                 >
                     <Transition.Child
                         as={Fragment}
@@ -230,9 +232,11 @@ export default () => {
                                                     <button
                                                         type="button"
                                                         className="mt-3 px-24 inline-flex w-full justify-center rounded-md border border-gray-300 bg-white py-2 text-base font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 sm:col-start-1 sm:mt-0 sm:text-sm"
-                                                        // onClick={() =>
-                                                        //     closeVisibleCreateProductModal()
-                                                        // }
+                                                            onClick={() => {
+                                                                // closeVisibleCreateProductModal()
+                                                                openVisibleCreateImageProductModal()
+                                                            }
+                                                        }
                                                     >
                                                         Добавить изображения
                                                     </button>

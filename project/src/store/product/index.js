@@ -24,7 +24,6 @@ const visibleCreateProductModal = create(set => ({
 
 const visibleCreateImageProductModal = create(set => ({
     currentVisibleCreateImageProductModal: false,
-    currentProduct: null,
     openVisibleCreateImageProductModal: () => {
         set(() => ({ currentVisibleCreateImageProductModal: true }))
     },

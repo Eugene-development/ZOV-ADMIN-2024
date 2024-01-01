@@ -1,5 +1,8 @@
 'use client'
 import Toggle from './Toggle'
+
+import ImageCropper from './Modal/Create/ImageCropper'
+
 import ModalRead from './Modal/Read'
 import ModalCreate from './Modal/Create'
 import ModalUpdate from './Modal/Update'
@@ -23,6 +26,8 @@ export default ({ data, allCategory }) => {
 
     return (
         <>
+            <ImageCropper/>
+
             <ModalRead />
             <ModalCreate />
             <ModalUpdate />
