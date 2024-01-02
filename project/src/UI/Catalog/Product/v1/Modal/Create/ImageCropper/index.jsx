@@ -98,7 +98,7 @@ export default () => {
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
     <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-3xl sm:p-6">
-      <div className="mt-8" style={{ width: "100%" }}>
+      <div className="my-4" style={{ width: "100%" }}>
         <input type="file" className="block w-full text-sm text-slate-500
             file:mr-4 file:py-2 file:px-4
             file:rounded-full file:border-0
@@ -131,13 +131,10 @@ export default () => {
 
             {image &&
                 <div className="flex pt-4 justify-between">
-                    {/* <div className="">
-                        <button type="button" onClick={getCropData} className=" inline-flex items-center rounded-md border border-transparent bg-green-100 px-6 py-3 text-base font-medium text-green-700 hover:bg-green-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">Обрезать</button>
-                    </div> */}
                     {cropData !== "#" &&
                         <>
-                            <div className='w-full mx-auto'>
-                                <img src={cropData} />
+                            <div className='w-full mx-xl'>
+                                <img style={{ width: "60%" }} src={cropData} />
                             </div>
                         </>
                     }
