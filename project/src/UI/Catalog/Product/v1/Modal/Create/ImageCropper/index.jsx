@@ -131,18 +131,13 @@ export default () => {
 
             {image &&
                 <div className="flex pt-4 justify-between">
-                    <div className="">
+                    {/* <div className="">
                         <button type="button" onClick={getCropData} className=" inline-flex items-center rounded-md border border-transparent bg-green-100 px-6 py-3 text-base font-medium text-green-700 hover:bg-green-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">Обрезать</button>
-                    </div>
+                    </div> */}
                     {cropData !== "#" &&
                         <>
-
-                            <div
-
-                            style={{ width: "50%", float: "center" }}
-                            >
-                            {/* <span className="mb-2">Результат:</span> */}
-                            <img style={{ width: "100%" }} src={cropData} />
+                            <div className='w-full mx-auto'>
+                                <img src={cropData} />
                             </div>
                         </>
                     }
