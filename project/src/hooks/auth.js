@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 import { useParams, useRouter } from 'next/navigation'
 
 export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
-    const router = useRouter()
+  const { push } = useRouter();
     const params = useParams()
 
     const { data: user, error, mutate } = useSWR('/api/user', () =>
@@ -105,7 +105,7 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
             console.log(redirectIfAuthenticated)
             console.log(user)
 
-            router.push(redirectIfAuthenticated)
+            push(redirectIfAuthenticated)
 
 
         }
@@ -113,7 +113,7 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
             window.location.pathname === '/verify-email' &&
             user?.email_verified_at
         )
-            router.push(redirectIfAuthenticated)
+            push(redirectIfAuthenticated)
         if (middleware === 'auth' && error) logout()
     }, [user, error])
 

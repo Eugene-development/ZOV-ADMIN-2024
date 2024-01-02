@@ -7,12 +7,15 @@ import Label from '@/components/Label'
 import Link from 'next/link'
 import { useAuth } from '@/hooks/auth'
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 
 const Page = () => {
     const { register } = useAuth({
         middleware: 'guest',
         redirectIfAuthenticated: '/dashboard',
     })
+
+    const { push } = useRouter()
 
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
@@ -29,7 +32,8 @@ const Page = () => {
             password,
             password_confirmation: passwordConfirmation,
             setErrors,
-        })
+        }),
+            push('/login')
     }
 
     return (

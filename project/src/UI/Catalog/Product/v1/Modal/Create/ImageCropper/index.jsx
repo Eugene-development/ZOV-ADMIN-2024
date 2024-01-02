@@ -105,26 +105,26 @@ export default () => {
             file:text-sm file:font-semibold
             file:bg-green-50 file:text-green-700
             hover:file:bg-violet-100
-            " onChange={handleFileChange} />
-        <br />
-        <br />
+            " onChange={handleFileChange}
+            />
         {image &&
             <Cropper
-            style={{ height: 400, width: "100%" }}
-            zoomTo={0.5}
-            initialAspectRatio={1}
-            src={image}
-            viewMode={1}
-            minCropBoxHeight={10}
-            minCropBoxWidth={10}
-            background={false}
-            responsive={true}
-            autoCropArea={1}
-            checkOrientation={false} // https://github.com/fengyuanchen/cropperjs/issues/671
-            onInitialized={(instance) => {
-                setCropper(instance);
-            }}
-            guides={true}
+                style={{ height: 400, width: "100%" }}
+                aspectRatio={16 / 9}
+                zoomTo={0.5}
+                initialAspectRatio={16 / 9}
+                src={image}
+                viewMode={1}
+                minCropBoxHeight={10}
+                minCropBoxWidth={10}
+                background={false}
+                responsive={true}
+                autoCropArea={1}
+                checkOrientation={false} // https://github.com/fengyuanchen/cropperjs/issues/671
+                onInitialized={(instance) => {
+                    setCropper(instance);
+                    }}
+                guides={true}
             />
         }
       </div>
