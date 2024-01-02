@@ -61,6 +61,7 @@ export default () => {
                     // Записать в стор 1 хэш (пока один), кроппер с одинаковым соотношением сторон, Закрыть окно добавления изображения
                     console.log(hashNameImage)
                 }, 'image/*');
+                closeVisibleCreateImageProductModal()
         } catch (error) {
             console.error(error);
         }
