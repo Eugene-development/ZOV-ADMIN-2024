@@ -54,11 +54,11 @@ export default () => {
 
 
 
-    const handleAddProduct = () => {
+    const handleAddImageProduct = () => {
         try {
                 cropper.getCroppedCanvas().toBlob(async (cropData) => {
                     const hashNameImage = await sendImageToBucket(cropData);
-                    // Записать в стор 1 хэш (пока один), кроппер с одинаковым соотношением сторон, Закрыть окно добавления изображения
+                    // Записать в стор 1 хэш (пока один)
                     console.log(hashNameImage)
                 }, 'image/*');
                 closeVisibleCreateImageProductModal()
@@ -145,7 +145,7 @@ export default () => {
                   <button
                     type="button"
                     className="inline-flex w-full justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 sm:col-start-2"
-                    onClick={() => handleAddProduct()}
+                    onClick={() => handleAddImageProduct()}
                   >
                     Загрузить
                   </button>
