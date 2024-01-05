@@ -15,7 +15,7 @@ export default () => {
         allCategory,
     } = visibleCreateProductModal()
 
-    const { openVisibleCreateImageProductModal } = visibleCreateImageProductModal()
+    const { openVisibleCreateImageProductModal, hashNameImage } = visibleCreateImageProductModal()
 
     // const rubric = map(data?.rubric, v => v.id)
     const [selectedParent, setSelectedParent] = useState([])
@@ -33,6 +33,7 @@ export default () => {
         slug: slugify(text.translit()),
         title,
         description,
+        hashNameImage
     }
 
     const cancelButtonRef = useRef(null)

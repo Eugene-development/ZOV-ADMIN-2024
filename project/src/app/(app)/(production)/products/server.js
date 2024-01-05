@@ -99,6 +99,7 @@ const CREATE_PRODUCT = gql`
         $parentableId: UUID!
         $createSeoTitle: CreateSeoTitleInput!
         $createSeoDescription: CreateSeoDescriptionInput!
+        $createImage: CreateImageInput!
     ) {
         createProduct(
             input: {
@@ -111,6 +112,7 @@ const CREATE_PRODUCT = gql`
                 parentable_id: $parentableId
                 seoTitle: { create: $createSeoTitle }
                 seoDescription: { create: $createSeoDescription }
+                image: { create: $createImage }
             }
         ) {
             id
@@ -135,6 +137,10 @@ export async function createProduct(data) {
         createSeoDescription: {
             key: NEXT_PUBLIC_KEY,
             value: data.description,
+        },
+        createImage: {
+            key: NEXT_PUBLIC_KEY,
+            hash: data.hashNameImage,
         },
     }
     await request(
