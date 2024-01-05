@@ -5,8 +5,7 @@ export const useImage = () => {
         const formData = new FormData()
         formData.append('image', cropData)
         const response = await axios.post(
-            'https://larux.ru:7741/upload-image',
-            // 'http://localhost:8002/upload-image',
+            process.env.NEXT_PUBLIC_IMAGE,
             formData,
             {
                 headers: {
