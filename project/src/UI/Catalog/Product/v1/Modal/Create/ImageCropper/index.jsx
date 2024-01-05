@@ -56,15 +56,15 @@ export default () => {
 
     const handleAddImageProduct = () => {
         try {
-                cropper.getCroppedCanvas().toBlob(async (cropData) => {
-                    try {
-                        const hashNameImage = await sendImageToBucket(cropData);
-                        await setHashNameImage(hashNameImage);
-                        await closeVisibleCreateImageProductModal();
-                    } catch (error) {
-                        console.error("Error while processing the response from the server:", error);
-                    }
-                }, 'image/*');
+            cropper.getCroppedCanvas().toBlob(async (cropData) => {
+                try {
+                    const hashNameImage = await sendImageToBucket(cropData);
+                    await setHashNameImage(hashNameImage);
+                    await closeVisibleCreateImageProductModal();
+                } catch (error) {
+                    console.error("Error while processing the response from the server:", error);
+                }
+            }, 'image/*');
         } catch (error) {
             console.error("Error in handleAddImageProduct:", error);
         }
