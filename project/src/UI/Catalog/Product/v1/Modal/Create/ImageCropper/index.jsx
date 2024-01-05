@@ -17,7 +17,7 @@ const defaultSrc =
 
 export default () => {
 
-  const { currentVisibleCreateImageProductModal, closeVisibleCreateImageProductModal } = visibleCreateImageProductModal()
+  const { currentVisibleCreateImageProductModal, closeVisibleCreateImageProductModal, setHashNameImage } = visibleCreateImageProductModal()
 
   const cancelButtonRef = useRef(null)
 
@@ -58,8 +58,7 @@ export default () => {
         try {
                 cropper.getCroppedCanvas().toBlob(async (cropData) => {
                     const hashNameImage = await sendImageToBucket(cropData);
-                    // Записать в стор 1 хэш (пока один)
-                    console.log(hashNameImage)
+                    await setHashNameImage(hashNameImage);
                 }, 'image/*');
                 closeVisibleCreateImageProductModal()
         } catch (error) {

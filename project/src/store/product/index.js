@@ -24,6 +24,10 @@ const visibleCreateProductModal = create(set => ({
 
 const visibleCreateImageProductModal = create(set => ({
     currentVisibleCreateImageProductModal: false,
+    hashNameImage: null,
+    setHashNameImage: (hashNameImage) => {
+        set(() => ({ hashNameImage }))
+    },
     openVisibleCreateImageProductModal: () => {
         set(() => ({ currentVisibleCreateImageProductModal: true }))
     },
