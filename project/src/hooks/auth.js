@@ -4,10 +4,14 @@ import { useEffect } from 'react'
 import { useParams, useRouter } from 'next/navigation'
 
 export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
-  const { push } = useRouter();
+    const { push } = useRouter()
     const params = useParams()
 
-    const { data: user, error, mutate } = useSWR('/api/user', () =>
+    const {
+        data: user,
+        error,
+        mutate,
+    } = useSWR('/api/user', () =>
         axios
             .get('/api/user')
             .then(res => res.data)
@@ -101,13 +105,10 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
 
     useEffect(() => {
         if (middleware === 'guest' && redirectIfAuthenticated && user) {
-
             console.log(redirectIfAuthenticated)
             console.log(user)
 
             push(redirectIfAuthenticated)
-
-
         }
         if (
             window.location.pathname === '/verify-email' &&

@@ -9,10 +9,12 @@ import ModalUpdate from './Modal/Update'
 import ModalDelete from './Modal/Delete'
 
 import { useProductStore } from '@/store/product'
-const { visibleReadProductModal,
+const {
+    visibleReadProductModal,
     visibleCreateProductModal,
     visibleUpdateProductModal,
-    visibleDeleteProductModal, } = useProductStore
+    visibleDeleteProductModal,
+} = useProductStore
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -26,7 +28,7 @@ export default ({ data, allCategory }) => {
 
     return (
         <>
-            <ImageCropper/>
+            <ImageCropper />
 
             <ModalRead />
             <ModalCreate />

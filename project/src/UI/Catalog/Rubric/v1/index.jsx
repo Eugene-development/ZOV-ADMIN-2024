@@ -5,7 +5,6 @@ import ModalCreate from './Modal/Create'
 import ModalUpdate from './Modal/Update'
 import ModalDelete from './Modal/Delete'
 
-
 import { useRubricStore } from '@/store/rubric'
 const {
     visibleReadRubricModal,
@@ -237,7 +236,6 @@ export default ({ data }) => {
                                                         onClick={() => {
                                                             openVisibleUpdateRubricModal(
                                                                 item,
-
                                                             )
                                                         }}
                                                         type="button"

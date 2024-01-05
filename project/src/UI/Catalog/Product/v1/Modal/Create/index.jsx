@@ -6,7 +6,8 @@ import { useSlug } from '@/hooks/slug'
 import FormCreate from './FormCreate'
 
 import { useProductStore } from '@/store/product'
-const { visibleCreateProductModal, visibleCreateImageProductModal } = useProductStore
+const { visibleCreateProductModal, visibleCreateImageProductModal } =
+    useProductStore
 
 export default () => {
     const {
@@ -15,7 +16,8 @@ export default () => {
         allCategory,
     } = visibleCreateProductModal()
 
-    const { openVisibleCreateImageProductModal, hashNameImage } = visibleCreateImageProductModal()
+    const { openVisibleCreateImageProductModal, hashNameImage } =
+        visibleCreateImageProductModal()
 
     // const rubric = map(data?.rubric, v => v.id)
     const [selectedParent, setSelectedParent] = useState([])
@@ -33,7 +35,7 @@ export default () => {
         slug: slugify(text.translit()),
         title,
         description,
-        hashNameImage
+        hashNameImage,
     }
 
     const cancelButtonRef = useRef(null)
@@ -103,9 +105,7 @@ export default () => {
                                         </div>
                                     </div>
 
-                                    <div
-                                        className="space-y-8 divide-y divide-gray-200"
-                                    >
+                                    <div className="space-y-8 divide-y divide-gray-200">
                                         <div className="py-2">
                                             <div className="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
                                                 <div className="sm:col-span-3">
@@ -229,20 +229,18 @@ export default () => {
                                             </div>
                                         </div>
 
-                                                <div>
-                                                    <button
-                                                        type="button"
-                                                        className="mt-3 px-24 inline-flex w-full justify-center rounded-md border border-gray-300 bg-white py-2 text-base font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 sm:col-start-1 sm:mt-0 sm:text-sm"
-                                                            onClick={() => {
-                                                                // closeVisibleCreateProductModal()
-                                                                openVisibleCreateImageProductModal()
-                                                            }
-                                                        }
-                                                    >
-                                                        Добавить изображение (макс. 5)
-                                                    </button>
-                                                </div>
-
+                                        <div>
+                                            <button
+                                                type="button"
+                                                className="mt-3 px-24 inline-flex w-full justify-center rounded-md border border-gray-300 bg-white py-2 text-base font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 sm:col-start-1 sm:mt-0 sm:text-sm"
+                                                onClick={() => {
+                                                    // closeVisibleCreateProductModal()
+                                                    openVisibleCreateImageProductModal()
+                                                }}
+                                            >
+                                                Добавить изображение (макс. 5)
+                                            </button>
+                                        </div>
 
                                         <div className="">
                                             <div className="mt-8 flex justify-between">

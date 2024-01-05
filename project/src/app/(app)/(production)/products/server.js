@@ -141,7 +141,7 @@ export async function createProduct(data) {
         createImage: {
             key: NEXT_PUBLIC_KEY,
             hash: data.hashNameImage,
-            alt: 'image'
+            alt: 'image',
         },
     }
     await request(

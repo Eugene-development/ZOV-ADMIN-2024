@@ -5,10 +5,9 @@ export default async () => {
     const data = await getProducts()
     const allCategory = await getAllCategories()
 
-
     return (
         <>
-            <Product data={data} allCategory={allCategory}/>
+            <Product data={data} allCategory={allCategory} />
         </>
     )
 }

@@ -20,7 +20,8 @@ const LoginLinks = () => {
 
                     <Link
                         href="/register"
-                        className="ml-4 text-sm text-gray-100">
+                        className="ml-4 text-sm text-gray-100"
+                    >
                         Регистрация
                     </Link>
                 </>

@@ -86,7 +86,8 @@ const Login = () => {
                 <div className="block mt-4">
                     <label
                         htmlFor="remember_me"
-                        className="inline-flex items-center">
+                        className="inline-flex items-center"
+                    >
                         <input
                             id="remember_me"
                             type="checkbox"
@@ -106,7 +107,8 @@ const Login = () => {
                 <div className="flex items-center justify-end mt-4">
                     <Link
                         href="/forgot-password"
-                        className="underline text-sm text-gray-600 hover:text-gray-900">
+                        className="underline text-sm text-gray-600 hover:text-gray-900"
+                    >
                         Забыли пароль?
                     </Link>
 

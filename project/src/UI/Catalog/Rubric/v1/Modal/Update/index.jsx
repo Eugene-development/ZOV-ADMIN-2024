@@ -8,7 +8,7 @@ const { visibleUpdateRubricModal } = useRubricStore
 
 import ButtonUpdate from './ButtonUpdate'
 
-export default() => {
+export default () => {
     const {
         currentVisibleUpdateRubricModal,
         closeVisibleUpdateRubricModal,
@@ -41,8 +41,7 @@ export default() => {
         title: changedSeoTitle || currentUpdateRubric.seoTitle?.value,
         idDescription: currentUpdateRubric.seoDescription?.id,
         description:
-            changedSeoDescription ||
-            currentUpdateRubric.seoDescription?.value,
+            changedSeoDescription || currentUpdateRubric.seoDescription?.value,
     }
 
     const handleUpdateRubric = () => {
@@ -204,15 +203,15 @@ export default() => {
                                                                 ),
                                                             )} */}
 
-                                                            {/* <option value="значение2" selected>Вариант 2 (дефолтный выбор)</option> */}
-                                                            {/* {data.rubric.map((item, key) => {
+                                                {/* <option value="значение2" selected>Вариант 2 (дефолтный выбор)</option> */}
+                                                {/* {data.rubric.map((item, key) => {
                                                         return item.id == currentParentIdRubric ?
                                                             <option key={item.id} value={currentParentIdRubric}>{currentParentValueRubric}</option>
                                                             :
                                                             <option key={item.id} value={item.id}>{item.value}</option>
                                                     }
                                                         )} */}
-                                                        {/* </select>
+                                                {/* </select>
                                                     </div>
                                                 </div> */}
                                                 <div className="sm:col-span-6">
@@ -335,4 +334,3 @@ export default() => {
         </>
     )
 }
-

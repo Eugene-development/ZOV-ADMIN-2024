@@ -64,9 +64,7 @@ export default () => {
                                             <p className="text-sm text-gray-500">
                                                 Категория "
                                                 <strong>
-                                                    {
-                                                        currentDeleteProduct.value
-                                                    }
+                                                    {currentDeleteProduct.value}
                                                 </strong>
                                                 " будет удалёна из базы данных.
                                                 Если вы не уверены просто
@@ -105,4 +103,3 @@ export default () => {
         </Transition.Root>
     )
 }
-

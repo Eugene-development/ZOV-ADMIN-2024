@@ -41,8 +41,7 @@ export default () => {
         title: changedSeoTitle || currentUpdateProduct.seoTitle?.value,
         idDescription: currentUpdateProduct.seoDescription?.id,
         description:
-            changedSeoDescription ||
-            currentUpdateProduct.seoDescription?.value,
+            changedSeoDescription || currentUpdateProduct.seoDescription?.value,
     }
 
     const handleUpdateProduct = () => {
@@ -335,4 +334,3 @@ export default () => {
         </>
     )
 }
-
