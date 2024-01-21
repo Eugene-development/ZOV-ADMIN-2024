@@ -1,6 +1,6 @@
 module.exports = {
     root: true,
-    parser: '@babel/eslint-parser',
+    parser: 'babel/eslint-parser',
     settings: {
         react: {
             version: 'detect',
