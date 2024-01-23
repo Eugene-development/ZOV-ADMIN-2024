@@ -1,6 +1,6 @@
 import { Fragment, useRef, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
-import { CheckIcon } from '@heroicons/react/24/outline'
+// import { CheckIcon } from '@heroicons/react/24/outline'
 
 import { useProductStore } from '@/store/product'
 const { visibleCreateImageProductModal } = useProductStore
@@ -9,8 +9,8 @@ import Cropper from 'react-cropper'
 import 'cropperjs/dist/cropper.css'
 import { useImage } from '@/lib/image'
 
-const defaultSrc =
-    'https://raw.githubusercontent.com/roadmanfong/react-cropper/master/example/img/child.jpg'
+// const defaultSrc =
+//     'https://raw.githubusercontent.com/roadmanfong/react-cropper/master/example/img/child.jpg'
 
 export default () => {
     const {

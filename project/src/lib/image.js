@@ -10,6 +10,7 @@ export const useImage = () => {
             {
                 headers: {
                     'Content-Type': 'multipart/form-data',
+                    Project: 'zov',
                 },
             },
         )
