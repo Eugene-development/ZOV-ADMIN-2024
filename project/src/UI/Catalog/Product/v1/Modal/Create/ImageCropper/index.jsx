@@ -120,9 +120,9 @@ export default () => {
                                                 height: 400,
                                                 width: '100%',
                                             }}
-                                            aspectRatio={16 / 9}
+                                            aspectRatio={3 / 2}
                                             zoomTo={0.5}
-                                            initialAspectRatio={16 / 9}
+                                            initialAspectRatio={3 / 2}
                                             src={image}
                                             viewMode={1}
                                             minCropBoxHeight={10}
