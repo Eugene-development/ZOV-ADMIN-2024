@@ -1,16 +1,18 @@
 "use client";
 import { XMarkIcon } from "@heroicons/react/20/solid";
 import { useCropperStore } from "@/store/cropper";
-const { visibleCropper } = useCropperStore;
+import { useProductStore } from '@/store/product'
+const { visibleCreateImageProductModal } = useProductStore
 
 export default function closeButton() {
-  const { closeVisibleCropper } = visibleCropper();
-
+const {
+        closeVisibleCreateImageProductModal,
+    } = visibleCreateImageProductModal()
   return (
     <button
-      onClick={closeVisibleCropper}
+      onClick={closeVisibleCreateImageProductModal}
       type="button"
-      className="relative isolate mr-0 p-3 focus-visible:outline-offset-[-4px] z-20 "
+      className="relative isolate -m-3 p-3 focus-visible:outline-offset-[-4px] z-20 "
     >
       <span className="sr-only">Закрыть</span>
       <XMarkIcon
