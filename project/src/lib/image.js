@@ -12,6 +12,8 @@ export const useImage = () => {
                     'Content-Type': 'multipart/form-data',
                     Project: 'zov',
                 },
+                maxBodyLength: 104857600, //100mb
+                maxContentLength: 104857600, //100mb
             },
         )
         const hashNameImage = response.data

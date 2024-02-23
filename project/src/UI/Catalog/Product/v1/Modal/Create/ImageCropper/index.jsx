@@ -124,7 +124,7 @@ export default () => {
                                                 width: '100%',
                                             }}
                                             aspectRatio={3 / 2}
-                                            zoomTo={0.5}
+                                            zoomTo={1}
                                             initialAspectRatio={3 / 2}
                                             src={image}
                                             viewMode={1}
