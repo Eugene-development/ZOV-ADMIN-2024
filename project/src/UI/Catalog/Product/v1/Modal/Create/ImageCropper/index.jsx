@@ -60,7 +60,7 @@ export default () => {
                         error,
                     )
                 }
-            }, 'image/*')
+            }, 'image/jpeg')
         } catch (error) {
             console.error('Error in handleAddImageProduct:', error)
         }
@@ -127,7 +127,7 @@ export default () => {
                                             zoomTo={1}
                                             initialAspectRatio={3 / 2}
                                             src={image}
-                                            viewMode={1}
+                                            viewMode={0.5}
                                             minCropBoxHeight={10}
                                             minCropBoxWidth={10}
                                             background={false}

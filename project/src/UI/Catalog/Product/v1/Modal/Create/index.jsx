@@ -35,7 +35,7 @@ export default () => {
         slug: slugify(text.translit()),
         title,
         description,
-        hashNameImage,
+        hashNameImage: 'ggg.jpeg'
     }
 
     const cancelButtonRef = useRef(null)

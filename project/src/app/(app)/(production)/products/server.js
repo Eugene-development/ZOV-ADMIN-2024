@@ -99,7 +99,7 @@ const CREATE_PRODUCT = gql`
         $parentableId: UUID!
         $createSeoTitle: CreateSeoTitleInput!
         $createSeoDescription: CreateSeoDescriptionInput!
-        $createImage: CreateImageInput!
+        $createImage: [CreateImageInput!]
     ) {
         createProduct(
             input: {
@@ -138,11 +138,23 @@ export async function createProduct(data) {
             key: NEXT_PUBLIC_KEY,
             value: data.description,
         },
-        createImage: {
-            key: NEXT_PUBLIC_KEY,
-            hash: data.hashNameImage,
-            alt: 'image',
-        },
+        createImage: [
+            {
+                key: NEXT_PUBLIC_KEY,
+                hash: '111.jpeg',
+                alt: 'image',
+            },
+            {
+                key: NEXT_PUBLIC_KEY,
+                hash: '222.jpeg',
+                alt: 'image',
+            },
+    ] ,
+        // createImage: {
+        //     // key: NEXT_PUBLIC_KEY,
+        //     hash: data.hashNameImage,
+        //     alt: 'image',
+        // },
     }
     await request(
         NEXT_PUBLIC_GRAPHQL,
