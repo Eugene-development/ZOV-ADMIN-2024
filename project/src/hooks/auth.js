@@ -123,6 +123,8 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
             user?.email_verified_at
         )
             push(redirectIfAuthenticated)
+
+            // Вылетает
         // if (middleware === 'auth' && error) logout()
     }, [user, error])
 
