@@ -63,6 +63,12 @@ export default () => {
                     }
                     await setHashNameImage(newImage)
                     closeVisibleCreateImageProductModal()
+
+
+                    // Cleaner
+                    setImage(null); // или setImage('');
+                    setCropper(null); // Если используется метод destroy: cropper.destroy();
+                    setCropData('#'); // или setCropData('');
                 } catch (error) {
                     console.error(
                         'Error while processing the response from the server:',
