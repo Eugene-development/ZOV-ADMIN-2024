@@ -66,8 +66,8 @@ export default () => {
 
 
                     // Cleaner
-                    setImage(null); // или setImage('');
-                    setCropper(null); // Если используется метод destroy: cropper.destroy();
+                    setImage(); // или setImage('');
+                    cropper.destroy(); // Если используется метод destroy: cropper.destroy();
                     setCropData('#'); // или setCropData('');
                 } catch (error) {
                     console.error(
