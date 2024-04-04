@@ -13,8 +13,6 @@ import { useImage } from '@/lib/image'
 //     'https://raw.githubusercontent.com/roadmanfong/react-cropper/master/example/img/child.jpg'
 
 
-const { NEXT_PUBLIC_KEY } = process.env
-
 export default () => {
 
     const {
@@ -57,19 +55,12 @@ export default () => {
             cropper.getCroppedCanvas().toBlob(async cropData => {
                 try {
                     const hashNameImage = await sendImageToBucket(cropData)
+
                     const newImage = {
-                        key: '31251b73-f4e4-4d94-a9ff-2af420b9287c',
+                        key: process.env.NEXT_PUBLIC_KEY,
                         hash: hashNameImage,
                         alt: 'image',
                     }
-                    // const newImage = {
-                    //     key: NEXT_PUBLIC_KEY,
-                    //     hash: hashNameImage,
-                    //     alt: 'image',
-                    // }
-
-                    // console.log(newImage)
-
                     await setHashNameImage(newImage)
                     closeVisibleCreateImageProductModal()
                 } catch (error) {

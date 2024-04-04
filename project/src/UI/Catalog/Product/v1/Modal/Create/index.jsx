@@ -37,7 +37,7 @@ export default () => {
         description,
         currentImages
     }
-    // console.log(formData)
+    // console.log(formData.currentImages)
     const cancelButtonRef = useRef(null)
 
     return (
