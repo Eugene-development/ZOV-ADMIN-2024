@@ -8,10 +8,15 @@ import Cropper from 'react-cropper'
 import 'cropperjs/dist/cropper.css'
 import { useImage } from '@/lib/image'
 
+
 // const defaultSrc =
 //     'https://raw.githubusercontent.com/roadmanfong/react-cropper/master/example/img/child.jpg'
 
+
+const { NEXT_PUBLIC_KEY } = process.env
+
 export default () => {
+
     const {
         currentVisibleCreateImageProductModal,
         closeVisibleCreateImageProductModal,
@@ -52,7 +57,20 @@ export default () => {
             cropper.getCroppedCanvas().toBlob(async cropData => {
                 try {
                     const hashNameImage = await sendImageToBucket(cropData)
-                    await setHashNameImage(hashNameImage)
+                    const newImage = {
+                        key: '31251b73-f4e4-4d94-a9ff-2af420b9287c',
+                        hash: hashNameImage,
+                        alt: 'image',
+                    }
+                    // const newImage = {
+                    //     key: NEXT_PUBLIC_KEY,
+                    //     hash: hashNameImage,
+                    //     alt: 'image',
+                    // }
+
+                    // console.log(newImage)
+
+                    await setHashNameImage(newImage)
                     closeVisibleCreateImageProductModal()
                 } catch (error) {
                     console.error(
@@ -102,8 +120,8 @@ export default () => {
                         >
                             <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-3xl sm:p-6">
 
-<CloseButton/>
-                                <div  className="my-4" style={{ width: '100%' }}>
+                                <CloseButton />
+                                <div className="my-4" style={{ width: '100%' }}>
 
                                     <input
                                         type="file"

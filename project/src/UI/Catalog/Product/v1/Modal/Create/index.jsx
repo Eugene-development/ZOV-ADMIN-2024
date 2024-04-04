@@ -16,7 +16,7 @@ export default () => {
         allCategory,
     } = visibleCreateProductModal()
 
-    const { openVisibleCreateImageProductModal, hashNameImage } =
+    const { openVisibleCreateImageProductModal, currentImages } =
         visibleCreateImageProductModal()
 
     // const rubric = map(data?.rubric, v => v.id)
@@ -35,9 +35,9 @@ export default () => {
         slug: slugify(text.translit()),
         title,
         description,
-        hashNameImage: 'ggg.jpeg'
+        currentImages
     }
-
+    // console.log(formData)
     const cancelButtonRef = useRef(null)
 
     return (

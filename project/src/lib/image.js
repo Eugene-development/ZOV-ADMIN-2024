@@ -1,6 +1,7 @@
 import axios from '@/lib/axios'
 
 export const useImage = () => {
+
     const sendImageToBucket = async cropData => {
         const formData = new FormData()
         formData.append('image', cropData)
@@ -12,8 +13,8 @@ export const useImage = () => {
                     'Content-Type': 'multipart/form-data',
                     Project: 'zov',
                 },
-                maxBodyLength: 104857600, //100mb
-                maxContentLength: 104857600, //100mb
+                // maxBodyLength: 104857600,
+                // maxContentLength: 104857600,
             },
         )
         const hashNameImage = response.data

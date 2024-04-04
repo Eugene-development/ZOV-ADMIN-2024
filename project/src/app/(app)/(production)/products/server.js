@@ -122,6 +122,7 @@ const CREATE_PRODUCT = gql`
 `
 
 export async function createProduct(data) {
+    // console.log(data.currentImages)
     const variables = {
         id: uuidv4(),
         key: NEXT_PUBLIC_KEY,
@@ -138,23 +139,19 @@ export async function createProduct(data) {
             key: NEXT_PUBLIC_KEY,
             value: data.description,
         },
-        createImage: [
-            {
-                key: NEXT_PUBLIC_KEY,
-                hash: '111.jpeg',
-                alt: 'image',
-            },
-            {
-                key: NEXT_PUBLIC_KEY,
-                hash: '222.jpeg',
-                alt: 'image',
-            },
-    ] ,
-        // createImage: {
-        //     // key: NEXT_PUBLIC_KEY,
-        //     hash: data.hashNameImage,
-        //     alt: 'image',
-        // },
+        // createImage: [
+        //     {
+        //         key: NEXT_PUBLIC_KEY,
+        //         hash: '111.jpeg',
+        //         alt: 'image',
+        //     },
+        //     {
+        //         key: NEXT_PUBLIC_KEY,
+        //         hash: '222.jpeg',
+        //         alt: 'image',
+        //     },
+    // ] ,
+        createImage: data.currentImages
     }
     await request(
         NEXT_PUBLIC_GRAPHQL,
