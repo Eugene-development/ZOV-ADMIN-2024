@@ -90,7 +90,7 @@ export default () => {
                                             >
                                                 Добавление продукта
                                             </Dialog.Title>
-                                            <div className="hidden md:block mt-2">
+                                            {/* <div className="hidden md:block mt-2">
                                                 <p className="text-sm text-gray-500">
                                                     Lorem ipsum, dolor sit amet
                                                     consectetur adipisicing
@@ -101,7 +101,7 @@ export default () => {
                                                     sapiente aliquam accusamus
                                                     facere veritatis.
                                                 </p>
-                                            </div>
+                                            </div> */}
                                         </div>
                                     </div>
 
@@ -240,6 +240,20 @@ export default () => {
                                             >
                                                 Добавить изображение (макс. 5)
                                             </button>
+                                        </div>
+
+                                        <div className='flex'>
+                                            {currentImages.map(image => (
+
+                                                <img
+                                                    src={`${process.env.NEXT_PUBLIC_S3}/${image?.hash}`}
+                                                    className="mr-2 h-16 w-24 object-cover object-center rounded-sm"
+                                                />
+
+
+
+                                            ))}
+
                                         </div>
 
                                         <div className="">
