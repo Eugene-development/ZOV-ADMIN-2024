@@ -1,6 +1,8 @@
 import { Fragment, useRef, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { CheckIcon } from '@heroicons/react/24/outline'
+import { PlusIcon } from '@heroicons/react/20/solid'
+
 import { useSlug } from '@/hooks/slug'
 
 import FormCreate from './FormCreate'
@@ -242,15 +244,26 @@ export default () => {
                                             </button>
                                         </div>
 
-                                        <div className='flex'>
-                                            {currentImages.map(image => (
+                                        {currentImages.map(image => (
+                                            <div className='flex relative'>
                                                 <img
                                                     src={`${process.env.NEXT_PUBLIC_S3}/${image?.hash}`}
-                                                    className="mr-2 h-16 w-24 object-cover object-center rounded-sm"
+                                                    className=" relative mr-2 h-16 w-24 object-cover object-center rounded-sm "
                                                 />
-                                            ))}
+                                                <button
+                                                    onClick={() => {
+                                                        console.log("123")
+                                                    }}
+                                                    type="button"
+                                                    className="absolute top-0.5 right-0.5 rounded-full bg-red-700 p-1 rotate-45 text-white shadow-sm hover:bg-red-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                                                >
+                                                    <PlusIcon className="h-5 w-5" aria-hidden="true" />
+                                                </button>
+                                            </div>
 
-                                        </div>
+
+                                        ))}
+
 
                                         <div className="">
                                             <div className="mt-8 flex justify-between">

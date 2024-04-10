@@ -29,6 +29,13 @@ export default () => {
     const [cropper, setCropper] = useState()
     const [cropData, setCropData] = useState('#')
 
+    const cleanCropper = () => {
+        setImage();
+        cropper.destroy();
+        setCropData('#');
+    }
+
+
     const handleFileChange = e => {
         e.preventDefault()
         let files
@@ -50,6 +57,7 @@ export default () => {
         }
     }
 
+
     const handleAddImageProduct = () => {
         try {
             cropper.getCroppedCanvas().toBlob(async cropData => {
@@ -63,12 +71,8 @@ export default () => {
                     }
                     await setHashNameImage(newImage)
                     closeVisibleCreateImageProductModal()
+                    cleanCropper()
 
-
-                    // Cleaner
-                    setImage(); // или setImage('');
-                    cropper.destroy(); // Если используется метод destroy: cropper.destroy();
-                    setCropData('#'); // или setCropData('');
                 } catch (error) {
                     console.error(
                         'Error while processing the response from the server:',
@@ -117,7 +121,10 @@ export default () => {
                         >
                             <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-3xl sm:p-6">
 
-                                <CloseButton />
+                                <div onClick={() => cleanCropper()}>
+                                    <CloseButton />
+                                </div>
+
                                 <div className="my-4" style={{ width: '100%' }}>
 
                                     <input
@@ -142,7 +149,7 @@ export default () => {
                                             zoomTo={1}
                                             initialAspectRatio={3 / 2}
                                             src={image}
-                                            viewMode={0.5}
+                                            viewMode={1}
                                             minCropBoxHeight={10}
                                             minCropBoxWidth={10}
                                             background={false}
@@ -163,7 +170,7 @@ export default () => {
                                             <>
                                                 <div className="w-full mx-xl">
                                                     <img
-                                                        style={{ width: '60%' }}
+                                                        style={{ width: '100%' }}
                                                         src={cropData}
                                                     />
                                                 </div>
