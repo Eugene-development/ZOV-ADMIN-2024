@@ -24,6 +24,9 @@ const PRODUCTS = gql`
         value
         slug
         key
+        image {
+          hash
+        }
         created_at
         updated_at
     }

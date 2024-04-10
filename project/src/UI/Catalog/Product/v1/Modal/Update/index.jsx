@@ -1,6 +1,8 @@
 import { Fragment, useRef, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { CheckIcon } from '@heroicons/react/24/outline'
+import { PlusIcon } from '@heroicons/react/20/solid'
+
 import { useSlug } from '@/hooks/slug'
 
 import { useProductStore } from '@/store/product'
@@ -15,6 +17,8 @@ export default () => {
         currentUpdateProduct,
         allCategory,
     } = visibleUpdateProductModal()
+
+    // console.log(currentUpdateProduct)
 
     const [changedText, setText] = useState(currentUpdateProduct.value)
     const [changedSeoTitle, setSeoTitle] = useState('')
@@ -240,6 +244,8 @@ export default () => {
                                                         />
                                                     </div>
                                                 </div>
+
+
                                                 <div className="sm:col-span-6">
                                                     <label
                                                         htmlFor="title"
@@ -295,6 +301,28 @@ export default () => {
                                                             className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                                                         />
                                                     </div>
+                                                </div>
+
+                                                <div className='flex'>
+                                                    {currentUpdateProduct?.image?.map(image => (
+                                                        <div key={image?.hash} className='flex relative'>
+                                                            <img
+                                                                src={`${process.env.NEXT_PUBLIC_S3}/${image?.hash}`}
+                                                                className=" relative mr-2 h-16 w-24 object-cover object-center rounded-sm "
+                                                            />
+                                                            <button
+                                                                onClick={() => {
+                                                                    console.log("123")
+                                                                }}
+                                                                type="button"
+                                                                className="absolute top-0 right-0 rounded-full bg-red-700 p-1 rotate-45 text-white shadow-sm hover:bg-red-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                                                            >
+                                                                <PlusIcon className="h-5 w-5" aria-hidden="true" />
+                                                            </button>
+                                                        </div>
+
+                                                    ))}
+
                                                 </div>
                                             </div>
                                         </div>
