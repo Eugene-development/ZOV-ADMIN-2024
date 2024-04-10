@@ -130,7 +130,7 @@ export default () => {
                                     <input
                                         type="file"
                                         name="image"
-                                        className="block w-full text-sm text-slate-500
+                                        className="block w-full text-sm text-slate-500 my-4
                                                     file:mr-4 file:py-2 file:px-4
                                                     file:rounded-full file:border-0
                                                     file:text-sm file:font-semibold
@@ -142,20 +142,20 @@ export default () => {
                                     {image && (
                                         <Cropper
                                             style={{
-                                                height: 400,
+                                                height: 350,
                                                 width: '100%',
                                             }}
                                             aspectRatio={3 / 2}
-                                            zoomTo={1}
+                                            zoomTo={0.1}
                                             initialAspectRatio={3 / 2}
                                             src={image}
                                             viewMode={1}
                                             minCropBoxHeight={10}
                                             minCropBoxWidth={10}
-                                            background={false}
+                                            background={true}
                                             responsive={true}
                                             autoCropArea={1}
-                                            checkOrientation={false} // https://github.com/fengyuanchen/cropperjs/issues/671
+                                            checkOrientation={true} // https://github.com/fengyuanchen/cropperjs/issues/671
                                             onInitialized={instance => {
                                                 setCropper(instance)
                                             }}
@@ -168,7 +168,7 @@ export default () => {
                                     <div className="flex pt-4 justify-between">
                                         {cropData !== '#' && (
                                             <>
-                                                <div className="w-full mx-xl">
+                                                <div className="">
                                                     <img
                                                         style={{ width: '100%' }}
                                                         src={cropData}
