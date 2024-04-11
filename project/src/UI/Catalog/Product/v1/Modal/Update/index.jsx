@@ -138,7 +138,7 @@ export default () => {
                                             >
                                                 Изменение значений категории
                                             </Dialog.Title>
-                                            <div className="hidden md:block mt-2">
+                                            {/* <div className="hidden md:block mt-2">
                                                 <p className="text-sm text-gray-500">
                                                     Обновление действия
                                                     необратимо. Будьте
@@ -147,7 +147,7 @@ export default () => {
                                                     сверяйте данные с
                                                     первоисточником.
                                                 </p>
-                                            </div>
+                                            </div> */}
                                         </div>
                                     </div>
                                     <div
@@ -327,7 +327,7 @@ export default () => {
                                             ))}
                                         </div>
 
-                                        <div className="">
+                                        <div className="border-t">
                                             <div className="mt-8 flex justify-between">
                                                 <div
                                                     onClick={() => {

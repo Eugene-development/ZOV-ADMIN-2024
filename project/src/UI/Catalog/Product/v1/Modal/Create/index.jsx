@@ -267,8 +267,7 @@ export default () => {
                                         </div>
 
 
-
-                                        <div className="">
+                                        <div className="border-t">
                                             <div className="mt-8 flex justify-between">
                                                 <div
                                                     onClick={() =>
