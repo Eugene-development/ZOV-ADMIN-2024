@@ -255,8 +255,6 @@ export default () => {
                                                     <button
                                                         onClick={() => {
                                                             removeImage(index)
-                                                            console.log(index)
-                                                            console.log(image?.hash)
                                                         }}
                                                         type="button"
                                                         className="absolute opacity-80 top-0.5 right-0.5 rounded-full bg-red-700 p-1 rotate-45 text-white shadow-sm hover:bg-red-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
