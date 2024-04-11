@@ -30,8 +30,8 @@ export default () => {
     const [cropData, setCropData] = useState('#')
 
     const cleanCropper = () => {
-        setImage();
-        cropper.destroy();
+        setImage(null);
+        setCropper(null);
         setCropData('#');
     }
 
@@ -69,7 +69,7 @@ export default () => {
                         hash: hashNameImage,
                         alt: 'image',
                     }
-                    await setHashNameImage(newImage)
+                    setHashNameImage(newImage)
                     closeVisibleCreateImageProductModal()
                     cleanCropper()
 

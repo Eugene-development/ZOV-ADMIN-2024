@@ -113,8 +113,6 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
 
     useEffect(() => {
         if (middleware === 'guest' && redirectIfAuthenticated && user) {
-            // console.log(redirectIfAuthenticated)
-            // console.log(user)
 
             push(redirectIfAuthenticated)
         }
@@ -124,8 +122,7 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
         )
             push(redirectIfAuthenticated)
 
-            // Вылетает
-        // if (middleware === 'auth' && error) logout()
+        if (middleware === 'auth' && error) logout()
     }, [user, error])
 
     return {
