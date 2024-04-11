@@ -36,8 +36,13 @@ const visibleCreateImageProductModal = create(set => ({
     },
     cleanCurrentImages: () => {
         set(() => ({ currentImages: [] }))
+    },
+    removeImage: index => {
+    set(state => ({
+        ...state,
+        currentImages: state.currentImages.filter((_, i) => i !== index)
+    }))
     }
-
 }))
 
 const visibleUpdateProductModal = create(set => ({

@@ -136,7 +136,7 @@ export default () => {
                                                 as="h3"
                                                 className="text-lg font-medium leading-6 text-gray-900"
                                             >
-                                                Изменение значений категории
+                                                Изменение данных
                                             </Dialog.Title>
                                             {/* <div className="hidden md:block mt-2">
                                                 <p className="text-sm text-gray-500">

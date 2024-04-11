@@ -18,7 +18,7 @@ export default () => {
         allCategory,
     } = visibleCreateProductModal()
 
-    const { openVisibleCreateImageProductModal, currentImages, cleanCurrentImages } =
+    const { openVisibleCreateImageProductModal, currentImages, cleanCurrentImages, removeImage } =
         visibleCreateImageProductModal()
 
     // const rubric = map(data?.rubric, v => v.id)
@@ -246,15 +246,17 @@ export default () => {
 
                                         <div className='flex '>
 
-                                            {currentImages.map(image => (
+                                            {currentImages.map((image, index) => (
                                                 <div key={image?.hash} className='mr-2 mt-2 relative'>
                                                     <img
                                                         src={`${process.env.NEXT_PUBLIC_S3}/${image?.hash}`}
-                                                        className="  h-24 w-32 object-cover object-center rounded-sm "
+                                                        className="h-24 w-32 object-cover object-center rounded-sm "
                                                     />
                                                     <button
                                                         onClick={() => {
-                                                            console.log("123")
+                                                            removeImage(index)
+                                                            console.log(index)
+                                                            console.log(image?.hash)
                                                         }}
                                                         type="button"
                                                         className="absolute opacity-80 top-0.5 right-0.5 rounded-full bg-red-700 p-1 rotate-45 text-white shadow-sm hover:bg-red-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
