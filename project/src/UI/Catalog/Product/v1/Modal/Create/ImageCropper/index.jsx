@@ -130,7 +130,7 @@ export default () => {
                                     <input
                                         type="file"
                                         name="image"
-                                        className="block w-full text-sm text-slate-500 my-4
+                                        className="block w-full text-sm text-slate-500 mb-3 my-
                                                     file:mr-4 file:py-2 file:px-4
                                                     file:rounded-full file:border-0
                                                     file:text-sm file:font-semibold
@@ -177,24 +177,29 @@ export default () => {
                                             </>
                                         )}
                                     </div>
+
+
                                 )}
-                                <div className="mt-5 sm:mt-6 sm:grid sm:grid-flow-row-dense sm:grid-cols-2 sm:gap-3">
-                                    <button
-                                        type="button"
-                                        className="inline-flex w-full justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 sm:col-start-2"
-                                        onClick={() => handleAddImageProduct()}
-                                    >
-                                        Загрузить
-                                    </button>
-                                    <button
-                                        type="button"
-                                        className="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:col-start-1 sm:mt-0"
-                                        onClick={getCropData}
-                                        ref={cancelButtonRef}
-                                    >
-                                        Обрезать
-                                    </button>
-                                </div>
+
+                                {image && (
+                                    <div className="mt-3 sm:mt-4 sm:grid sm:grid-flow-row-dense sm:grid-cols-2 sm:gap-3">
+                                        <button
+                                            type="button"
+                                            className="inline-flex w-full justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 sm:col-start-2"
+                                            onClick={() => handleAddImageProduct()}
+                                        >
+                                            Загрузить
+                                        </button>
+                                        <button
+                                            type="button"
+                                            className="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:col-start-1 sm:mt-0"
+                                            onClick={getCropData}
+                                            ref={cancelButtonRef}
+                                        >
+                                            Обрезать
+                                        </button>
+                                    </div>
+                                )}
                             </Dialog.Panel>
                         </Transition.Child>
                     </div>
