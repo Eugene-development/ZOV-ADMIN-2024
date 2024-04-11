@@ -121,11 +121,11 @@ export default () => {
                         >
                             <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-3xl sm:p-6">
 
-                                <div onClick={() => cleanCropper()}>
+                                <div className='absolute top-4 right-4' onClick={() => cleanCropper()}>
                                     <CloseButton />
                                 </div>
 
-                                <div className="my-4" style={{ width: '100%' }}>
+                                <div className="my-4 max-w-full" >
 
                                     <input
                                         type="file"
@@ -170,15 +170,13 @@ export default () => {
                                             <>
                                                 <div className="">
                                                     <img
-                                                        style={{ width: '100%' }}
+                                                        className="w-full h-48"
                                                         src={cropData}
                                                     />
                                                 </div>
                                             </>
                                         )}
                                     </div>
-
-
                                 )}
 
                                 {image && (
