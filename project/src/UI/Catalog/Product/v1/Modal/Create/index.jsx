@@ -25,18 +25,20 @@ export default () => {
     const [selectedParent, setSelectedParent] = useState([])
     const handleParentChange = e => setSelectedParent(e.target.value)
 
+    const [value, setValue] = useState('')
     const [text, setText] = useState('')
-    const [title, setSEOTitle] = useState('')
-    const [description, setSEODescription] = useState('')
+    const [seoTitle, setSEOTitle] = useState('')
+    const [seoDescription, setSEODescription] = useState('')
 
     const { slugify } = useSlug()
 
     let formData = {
         selectedParent,
+        value,
         text,
-        slug: slugify(text.translit()),
-        title,
-        description,
+        slug: slugify(value.translit()),
+        seoTitle,
+        seoDescription,
         currentImages
     }
     // console.log(formData.currentImages)
@@ -169,7 +171,7 @@ export default () => {
                                                     <div className="mt-1">
                                                         <input
                                                             onChange={e =>
-                                                                setText(
+                                                                setValue(
                                                                     e.target
                                                                         .value,
                                                                 )

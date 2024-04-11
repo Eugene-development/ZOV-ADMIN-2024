@@ -84,7 +84,7 @@ export default function index() {
 
                                         <div className="">
                                             <span className="block text-sm font-medium text-gray-700">
-                                                Принадлежит категории:
+                                                Принадлежит категории:{' '}
                                                 {
                                                     currentReadProduct.parent
                                                         ?.value
@@ -116,8 +116,8 @@ export default function index() {
                                                 Запись создана:{' '}
                                                 {currentReadProduct.created_at
                                                     ? new Date(
-                                                          currentReadProduct.created_at,
-                                                      ).toLocaleDateString('ru')
+                                                        currentReadProduct.created_at,
+                                                    ).toLocaleDateString('ru')
                                                     : 'Не указано'}
                                             </span>
                                         </div>
@@ -126,8 +126,8 @@ export default function index() {
                                                 Последнее изменение:{' '}
                                                 {currentReadProduct.updated_at
                                                     ? new Date(
-                                                          currentReadProduct.updated_at,
-                                                      ).toLocaleDateString('ru')
+                                                        currentReadProduct.updated_at,
+                                                    ).toLocaleDateString('ru')
                                                     : 'Не указано'}
                                             </span>
                                         </div>
@@ -141,7 +141,7 @@ export default function index() {
                                         onClick={() =>
                                             closeVisibleReadProductModal()
                                         }
-                                        // ref={cancelButtonRef}
+                                    // ref={cancelButtonRef}
                                     >
                                         Закрыть
                                     </button>

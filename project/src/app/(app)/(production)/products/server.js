@@ -130,17 +130,17 @@ export async function createProduct(data) {
         id: uuidv4(),
         key: NEXT_PUBLIC_KEY,
         is_active: true,
-        value: data.text,
+        value: data.value,
         slug: data.slug,
         parentableType: 'category',
         parentableId: data.selectedParent,
         createSeoTitle: {
             key: NEXT_PUBLIC_KEY,
-            value: data.title,
+            value: data.seoTitle,
         },
         createSeoDescription: {
             key: NEXT_PUBLIC_KEY,
-            value: data.description,
+            value: data.seoDescription,
         },
         // createImage: [
         //     {
