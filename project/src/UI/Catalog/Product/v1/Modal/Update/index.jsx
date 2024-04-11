@@ -123,7 +123,7 @@ export default () => {
                                 leaveFrom="opacity-100 translate-y-0 sm:scale-100"
                                 leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                             >
-                                <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-2xl sm:p-6">
+                                <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-3xl sm:p-6">
                                     <div>
                                         <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-blue-100">
                                             <CheckIcon
@@ -152,7 +152,7 @@ export default () => {
                                     </div>
                                     <div
                                         // onSubmit={handleUpdateProduct}
-                                        className="space-y-8 divide-y divide-gray-200"
+                                        className="space-y-6 divide-gray-200"
                                     >
                                         <div className="py-2">
                                             <div className="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
@@ -303,26 +303,28 @@ export default () => {
                                                     </div>
                                                 </div>
 
-                                                {currentUpdateProduct?.image?.map(image => (
-                                                    <div key={image?.hash} className='flex relative'>
-                                                        <img
-                                                            src={`${process.env.NEXT_PUBLIC_S3}/${image?.hash}`}
-                                                            className=" relative mr-2 h-16 w-24 object-cover object-center rounded-sm "
-                                                        />
-                                                        <button
-                                                            onClick={() => {
-                                                                console.log("123")
-                                                            }}
-                                                            type="button"
-                                                            className="absolute top-0.5 right-0.5 rounded-full bg-red-700 p-1 rotate-45 text-white shadow-sm hover:bg-red-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                                                        >
-                                                            <PlusIcon className="h-5 w-5" aria-hidden="true" />
-                                                        </button>
-                                                    </div>
 
-                                                ))}
 
                                             </div>
+                                        </div>
+                                        <div className='flex '>
+                                            {currentUpdateProduct?.image?.map(image => (
+                                                <div key={image?.hash} className='flex relative mr-2 mt-2'>
+                                                    <img
+                                                        src={`${process.env.NEXT_PUBLIC_S3}/${image?.hash}`}
+                                                        className="h-24 w-32 object-cover object-center rounded-sm "
+                                                    />
+                                                    <button
+                                                        onClick={() => {
+                                                            console.log("123")
+                                                        }}
+                                                        type="button"
+                                                        className="absolute opacity-80 top-0.5 right-0.5 rounded-full bg-red-700 p-1 rotate-45 text-white shadow-sm hover:bg-red-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                                                    >
+                                                        <PlusIcon className="h-4 w-4" aria-hidden="true" />
+                                                    </button>
+                                                </div>
+                                            ))}
                                         </div>
 
                                         <div className="">
