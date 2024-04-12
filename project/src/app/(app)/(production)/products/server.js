@@ -103,6 +103,7 @@ const CREATE_PRODUCT = gql`
         $createSeoTitle: CreateSeoTitleInput!
         $createSeoDescription: CreateSeoDescriptionInput!
         $createImage: [CreateImageInput!]
+        $createText: CreateTextInput
     ) {
         createProduct(
             input: {
@@ -116,6 +117,7 @@ const CREATE_PRODUCT = gql`
                 seoTitle: { create: $createSeoTitle }
                 seoDescription: { create: $createSeoDescription }
                 image: { create: $createImage }
+                text: { create: $createText }
             }
         ) {
             id
@@ -132,6 +134,7 @@ export async function createProduct(data) {
         is_active: true,
         value: data.value,
         slug: data.slug,
+        // text: data.text,
         parentableType: 'category',
         parentableId: data.selectedParent,
         createSeoTitle: {
@@ -141,6 +144,11 @@ export async function createProduct(data) {
         createSeoDescription: {
             key: NEXT_PUBLIC_KEY,
             value: data.seoDescription,
+        },
+        createText: {
+            // id: uuidv4(),
+            key: NEXT_PUBLIC_KEY,
+            value: data.text
         },
         // createImage: [
         //     {
@@ -154,7 +162,7 @@ export async function createProduct(data) {
         //         alt: 'image',
         //     },
     // ] ,
-        createImage: data.currentImages
+        createImage: data.currentImages,
     }
     await request(
         NEXT_PUBLIC_GRAPHQL,

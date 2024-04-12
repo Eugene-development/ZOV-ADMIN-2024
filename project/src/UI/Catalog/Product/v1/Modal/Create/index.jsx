@@ -27,6 +27,7 @@ export default () => {
 
     const [value, setValue] = useState('')
     const [text, setText] = useState('')
+    console.log(text)
     const [seoTitle, setSEOTitle] = useState('')
     const [seoDescription, setSEODescription] = useState('')
 
@@ -109,13 +110,13 @@ export default () => {
                                         </div>
                                     </div>
 
-                                    <div className="space-y-6 divide-gray-200">
-                                        <div className="py-2">
-                                            <div className="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
+                                    <div className="space-y-4 divide-gray-200">
+                                        <div className="">
+                                            <div className="mt-3 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
                                                 <div className="sm:col-span-3">
                                                     <label
                                                         htmlFor="parent"
-                                                        className="block text-sm font-medium text-gray-700"
+                                                        className="block text-xs font-medium text-gray-700"
                                                     >
                                                         Принадлежит категории
                                                     </label>
@@ -164,11 +165,11 @@ export default () => {
                                                 <div className="sm:col-span-6">
                                                     <label
                                                         htmlFor="value"
-                                                        className="block text-sm font-medium text-gray-700"
+                                                        className="block text-xs font-medium text-gray-700"
                                                     >
                                                         Значение
                                                     </label>
-                                                    <div className="mt-1">
+                                                    <div className="">
                                                         <input
                                                             onChange={e =>
                                                                 setValue(
@@ -184,14 +185,60 @@ export default () => {
                                                         />
                                                     </div>
                                                 </div>
+
+
+                                                <div className="sm:col-span-6">
+                                                    <label htmlFor="comment" className="block text-xs font-medium leading-6 text-gray-900">
+                                                        Добавьте текст
+                                                    </label>
+                                                    <div className="">
+                                                        <textarea
+                                                            onChange={e =>
+                                                                setText(
+                                                                    e.target
+                                                                        .value,
+                                                                )
+                                                            }
+                                                            rows={2}
+                                                            name="comment"
+                                                            id="comment"
+                                                            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                                            defaultValue={''}
+                                                        />
+                                                    </div>
+                                                </div>
+
+                                                {/* <div className="sm:col-span-6">
+                                                    <label
+                                                        htmlFor="text"
+                                                        className="block text-sm font-medium text-gray-700"
+                                                    >
+                                                        Текст
+                                                    </label>
+                                                    <div className="mt-1">
+                                                        <input
+                                                            onChange={e =>
+                                                                setText(
+                                                                    e.target
+                                                                        .value,
+                                                                )
+                                                            }
+                                                            type="text"
+                                                            name="text"
+                                                            id="text"
+                                                            autoComplete="text"
+                                                            className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                                                        />
+                                                    </div>
+                                                </div> */}
                                                 <div className="sm:col-span-6">
                                                     <label
                                                         htmlFor="value"
-                                                        className="block text-sm font-medium text-gray-700"
+                                                        className="block text-xs font-medium text-gray-700"
                                                     >
                                                         Title
                                                     </label>
-                                                    <div className="mt-1">
+                                                    <div className="">
                                                         <input
                                                             onChange={e =>
                                                                 setSEOTitle(
@@ -210,11 +257,11 @@ export default () => {
                                                 <div className="sm:col-span-6">
                                                     <label
                                                         htmlFor="value"
-                                                        className="block text-sm font-medium text-gray-700"
+                                                        className="block text-xs font-medium text-gray-700"
                                                     >
                                                         Description
                                                     </label>
-                                                    <div className="mt-1">
+                                                    <div className="">
                                                         <input
                                                             onChange={e =>
                                                                 setSEODescription(
@@ -236,7 +283,7 @@ export default () => {
                                         <div>
                                             <button
                                                 type="button"
-                                                className="mt-3 px-24 inline-flex w-full justify-center rounded-md border border-gray-300 bg-white py-2 text-base font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 sm:col-start-1 sm:mt-0 sm:text-sm"
+                                                className="mt-2 px-24 inline-flex w-full justify-center rounded-md border border-gray-300 bg-white py-2 text-base font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 sm:col-start-1 sm:text-sm"
                                                 onClick={() => {
                                                     // closeVisibleCreateProductModal()
                                                     openVisibleCreateImageProductModal()
@@ -252,7 +299,7 @@ export default () => {
                                                 <div key={image?.hash} className='mr-2 mt-2 relative'>
                                                     <img
                                                         src={`${process.env.NEXT_PUBLIC_S3}/${image?.hash}`}
-                                                        className="h-24 w-32 object-cover object-center rounded-sm "
+                                                        className="h-20 w-full object-cover object-center rounded-sm "
                                                     />
                                                     <button
                                                         onClick={() => {
@@ -270,7 +317,7 @@ export default () => {
 
 
                                         <div className="border-t">
-                                            <div className="mt-8 flex justify-between">
+                                            <div className="mt-4 flex justify-between">
                                                 <div
                                                     onClick={() =>
                                                         closeVisibleCreateProductModal()
