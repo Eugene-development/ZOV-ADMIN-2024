@@ -11,7 +11,7 @@ export const useImage = () => {
             {
                 headers: {
                     'Content-Type': 'multipart/form-data',
-                    Project: 'zov',
+                    Project: process.env.NEXT_PUBLIC_PROJECT,
                 },
                 // maxBodyLength: 104857600,
                 // maxContentLength: 104857600,
