@@ -24,6 +24,10 @@ export default () => {
     const [changedText, setText] = useState(currentUpdateProduct.text?.value)
     const [changedSeoTitle, setSeoTitle] = useState('')
     const [changedSeoDescription, setSeoDescription] = useState('')
+    console.log(changedText)
+
+
+
     // const seoTitle = changedSeoTitle || currentSeoTitleProduct;
     // const seoDescription = changedSeoDescription || currentSeoDescriptionProduct;
 
@@ -39,10 +43,11 @@ export default () => {
         id: currentUpdateProduct.id,
         selectedParent,
         name: changedName || currentUpdateProduct.value,
-        text: changedText || currentUpdateProduct.text?.value,
         slug: changedName
             ? slugify(changedName.translit())
             : currentUpdateProduct.slug,
+        idText: currentUpdateProduct.text?.id,
+        text: changedText || currentUpdateProduct.text?.value,
         idTitle: currentUpdateProduct.seoTitle?.id,
         title: changedSeoTitle || currentUpdateProduct.seoTitle?.value,
         idDescription: currentUpdateProduct.seoDescription?.id,
@@ -50,8 +55,9 @@ export default () => {
             changedSeoDescription || currentUpdateProduct.seoDescription?.value,
     }
 
-    const handleUpdateProduct = () => {
+    const cleanerProduct = () => {
         closeVisibleUpdateProductModal()
+        setName('')
         setText('')
         setSeoTitle('')
         setSeoDescription('')
@@ -361,7 +367,7 @@ export default () => {
                                             <div className="mt-8 flex justify-between">
                                                 <div
                                                     onClick={() => {
-                                                        handleUpdateProduct()
+                                                        cleanerProduct()
                                                     }}
                                                 >
                                                     <ButtonUpdate

@@ -25,6 +25,7 @@ const PRODUCTS = gql`
         slug
         key
         text {
+            id
             value
         }
         image {
@@ -185,6 +186,7 @@ const UPDATE_PRODUCT = gql`
         $slug: String
         $parentableType: String
         $parentableId: UUID
+        $updateText: UpdateTextInput!
         $updateSeoTitle: UpdateSeoTitleInput!
         $updateSeoDescription: UpdateSeoDescriptionInput!
     ) {
@@ -197,6 +199,7 @@ const UPDATE_PRODUCT = gql`
                 slug: $slug
                 parentable_type: $parentableType
                 parentable_id: $parentableId
+                text: { update: $updateText }
                 seoTitle: { update: $updateSeoTitle }
                 seoDescription: { update: $updateSeoDescription }
             }
@@ -215,6 +218,11 @@ export async function updateProduct(data) {
         slug: data.slug,
         parentableType: 'category',
         parentableId: data.selectedParent,
+        updateText: {
+            id: data.idText,
+            key: NEXT_PUBLIC_KEY,
+            value: data.text,
+        },
         updateSeoTitle: {
             id: data.idTitle,
             key: NEXT_PUBLIC_KEY,
