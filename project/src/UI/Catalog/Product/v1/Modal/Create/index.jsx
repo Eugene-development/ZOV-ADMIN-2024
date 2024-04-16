@@ -167,7 +167,7 @@ export default () => {
                                                         htmlFor="value"
                                                         className="block text-xs font-medium text-gray-700"
                                                     >
-                                                        Значение
+                                                        Наименование
                                                     </label>
                                                     <div className="">
                                                         <input

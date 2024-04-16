@@ -223,7 +223,7 @@ export default () => {
                                                         htmlFor="value"
                                                         className="block text-sm font-medium text-gray-700"
                                                     >
-                                                        Значение
+                                                        Наименование
                                                     </label>
                                                     <div className="mt-1">
                                                         <input
@@ -236,9 +236,37 @@ export default () => {
                                                                         .value,
                                                                 )
                                                             }
+
                                                             type="text"
                                                             name="value"
                                                             id="value"
+                                                            autoComplete="value"
+                                                            className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                                                        />
+                                                    </div>
+                                                </div>
+                                                <div className="sm:col-span-6">
+                                                    <label
+                                                        htmlFor="text"
+                                                        className="block text-sm font-medium text-gray-700"
+                                                    >
+                                                        Текст
+                                                    </label>
+                                                    <div className="mt-1">
+                                                        <textarea
+                                                            defaultValue={
+                                                                currentUpdateProduct.value
+                                                            }
+                                                            onChange={e =>
+                                                                setText(
+                                                                    e.target
+                                                                        .value,
+                                                                )
+                                                            }
+                                                            rows={2}
+                                                            type="text"
+                                                            name="text"
+                                                            id="text"
                                                             autoComplete="value"
                                                             className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                                                         />
