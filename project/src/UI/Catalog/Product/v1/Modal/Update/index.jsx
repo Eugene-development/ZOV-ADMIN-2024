@@ -20,7 +20,8 @@ export default () => {
 
     // console.log(currentUpdateProduct)
 
-    const [changedText, setText] = useState(currentUpdateProduct.value)
+    const [changedName, setName] = useState(currentUpdateProduct.value)
+    const [changedText, setText] = useState(currentUpdateProduct.text?.value)
     const [changedSeoTitle, setSeoTitle] = useState('')
     const [changedSeoDescription, setSeoDescription] = useState('')
     // const seoTitle = changedSeoTitle || currentSeoTitleProduct;
@@ -37,9 +38,10 @@ export default () => {
     let formData = {
         id: currentUpdateProduct.id,
         selectedParent,
-        text: changedText || currentUpdateProduct.value,
-        slug: changedText
-            ? slugify(changedText.translit())
+        name: changedName || currentUpdateProduct.value,
+        text: changedText || currentUpdateProduct.text?.value,
+        slug: changedName
+            ? slugify(changedName.translit())
             : currentUpdateProduct.slug,
         idTitle: currentUpdateProduct.seoTitle?.id,
         title: changedSeoTitle || currentUpdateProduct.seoTitle?.value,
@@ -231,7 +233,7 @@ export default () => {
                                                                 currentUpdateProduct.value
                                                             }
                                                             onChange={e =>
-                                                                setText(
+                                                                setName(
                                                                     e.target
                                                                         .value,
                                                                 )
@@ -255,7 +257,7 @@ export default () => {
                                                     <div className="mt-1">
                                                         <textarea
                                                             defaultValue={
-                                                                currentUpdateProduct.value
+                                                                currentUpdateProduct.text?.value
                                                             }
                                                             onChange={e =>
                                                                 setText(

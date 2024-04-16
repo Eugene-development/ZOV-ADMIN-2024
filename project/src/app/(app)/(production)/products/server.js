@@ -24,6 +24,9 @@ const PRODUCTS = gql`
         value
         slug
         key
+        text {
+            value
+        }
         image {
           hash
         }
@@ -208,7 +211,7 @@ export async function updateProduct(data) {
         id: data.id,
         key: NEXT_PUBLIC_KEY,
         is_active: true,
-        value: data.text,
+        value: data.name,
         slug: data.slug,
         parentableType: 'category',
         parentableId: data.selectedParent,
